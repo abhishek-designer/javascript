@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<script>
+class Mobile{
+			constructor(model_no, color, price)
+			{
+				this.model = model_no;
+				this.color = color;
+				this.price = price;
+			}
+	disp(){
+		return this.model + " and " + this.price
+	};
+			
+		}
+		
+		var nokia = new Mobile("Galaxy", "Red", "50000");
+		var lg = new Mobile("LG Pro", "Green", "45000");
+		document.write(lg.disp())
+	</script>
+</body>
+</html>

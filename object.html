@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+	<p id="cont"></p>
+	<input type="text" id="name"><br><br>
+	<input type="text" id="code"><br><br>
+	<input type="text" id="desig"><br><br>
+	<input type="text" id="salary"><br>
+	<input type="button" value="submit data" id="submit" onclick = "document.getElementById('content').textContent = designer(fname, codes, des, sal)">
+	<script>
+
+		
+var laptop = {
+	model : "Dell",
+	ram : "3GB",
+	processor : "inteli5",
+	gaming : "GEFORCE",
+	price : "45,000",
+	descript: function(){
+		return(laptop.model + laptop.ram + laptop.processor);
+	}
+};
+		for (var prop in laptop)
+			{
+				if(typeof laptop[prop] !== 'function')
+					{
+				document.write(prop + "<br>" + laptop[prop] + "<br>");
+						}
+			}
+		
+		var ac = function aircondtioner(pmodel, ptype, pcolor, ptonn, pprice)
+		{
+			
+				this.model = pmodel;
+				this.type = ptype;
+				this.color = pcolor;
+				this.tonn = ptonn;
+				var price = pprice;
+			    this.mainfun = function(a,b)
+			{
+			 document.write(this.model + this.type + this.price + "<br>");
+				document.write(a + b);
+			}
+		};
+		
+		var lg = new ac("lg", "split", "white", "1.5tonn", "45000");
+		
+		document.write(lg.price);
+		
+		ac.prototype.stablizer = function(stab){
+			document.write(stab);
+		};
+		var hitachi = new ac("lg", "split", "white", "1.5tonn", "45000");
+		var mitsu = new ac("lg", "split", "white", "1.5tonn", "45000");
+		document.write(hitachi.stablizer("kangroo"));
+		document.write(mitsu.stablizer("crompt"));
+		
+		
+	</script>
+</body>
+</html>

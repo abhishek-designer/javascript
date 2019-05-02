@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<style>
+	.styling{background:#FFBB4D; font-size: 20px; padding: 20px; 
+	}
+	</style>
+</head>
+
+<body>
+	<select id="opt">
+	</select>
+	<ul id="menu">
+	<li id="hm">Home</li>
+	<li id="abt">aboutus</li>
+	<li id="cnt">contactus</li>
+	</ul>
+	<input type="text" id="val1">
+	<input type="text" id="val2">
+	<input type="button" onClick="myfun(val1.value, val2.value)" value="get Result">
+	<div id="data"></div>
+	<script>
+		
+	var selectbox = document.getElementById("opt");
+		var arr = ["jan", "feb","mar","apr","may"];
+		var lines = [ {'time': 'the time', 'user': 'the user', 'content': 'the content'}, 
+					 {'time': 'the time2', 'user': 'the user2', 'content': 'the content2'}];
+		
+		for(i=0; i<arr.length; i++){
+			var options = document.createElement("option");
+			selectbox.appendChild(options);
+			options.textContent = arr[i];
+		}
+		
+		var getul = document.getElementById("menu");
+		getul.setAttribute("id", "node");
+        var extelement = document.getElementById("hm");
+		var ref = document.getElementById("cnt");
+		getul.insertBefore(extelement, ref);
+		console.log(getul);
+		
+		for(i=0; i<lines.length; i++)
+			{
+			document.write("Outer loop" + " " + [i] + "<br>");
+			document.write("time: " + lines[i].time + "<br>" + "user: " + lines[i].user + "<br>" + "content: " + lines[i].content + "<br> " );
+				
+				
+		}
+		
+		
+		function add(...args)
+		{
+			return (args[0] + args[1] + args[2]);
+		}
+		
+		var k = add(10, 40, 60);
+		document.write(k);
+		
+		var k = 10;
+		var t = 20;
+		document.write(k + t + "<br><br>");
+		
+		
+		function outer(){
+			var outer = "this is a outer function";
+			document.write(outer);
+			
+			function inner(){
+				var inner = "This is a inner function";
+				document.write(inner);
+				document.write(outer);
+				document.write(k);
+			}
+			document.write(k);
+			inner();
+			
+		}
+		outer();
+		
+		//anyomous function
+		var myfun = function(a,b)
+		{
+			document.getElementById("data").textContent = Number(a) + Number(b);
+			if(Number(a) + Number(b) < 18)
+			   {
+			   alert("you are not eligable");
+			   }
+			else{
+				document.getElementById("data").classList.add("styling");
+			}
+		}
+	</script>
+</body>
+</html>
